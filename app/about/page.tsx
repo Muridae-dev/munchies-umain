@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="flex items-center justify-center h-screen w-screen">
+    <div className="flex items-center justify-center h-screen w-screen text-lg font-sans">
       This is the about page
       <Image
         aria-hidden
