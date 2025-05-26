@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./Button.css";
 
 :root {
   --background: #ffffff;
@@ -18,10 +19,18 @@
   --text-title: 0.875rem;
   --text-subtitle: 0.75rem;
   --text-body: 0.75rem;
+
+  --text-button: 1rem;
+
+  --radius-xs: 5px;
 }
 
 .text-subtitle {
   @apply uppercase;
+}
+
+.text-button {
+  @apply font-bold;
 }
 
 @font-face {

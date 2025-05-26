@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.primary {
+  @apply bg-green;
+}
+
+.secondary {
+  @apply bg-transparent border border-white;
+}
