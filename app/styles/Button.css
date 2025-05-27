@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.primary {
+  @apply bg-green;
+}
+
+.secondary {
+  @apply bg-transparent border border-white;
+}
+
+@theme inline {
+  --spacing-button: 20px;
+  --radius-button: 8px;
+}
