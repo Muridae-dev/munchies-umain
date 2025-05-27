@@ -20,7 +20,8 @@
   --text-subtitle: 0.75rem;
   --text-body: 0.75rem;
 
-  --text-button: 1rem;
+  --spacing-logo: 24px;
+  --spacing-logo-desktop: 40px;
 
   --radius-xs: 5px;
 }
