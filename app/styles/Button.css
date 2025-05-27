@@ -7,3 +7,7 @@
 .secondary {
   @apply bg-transparent border border-white;
 }
+
+@theme inline {
+  --spacing-button: 20px;
+}

@@ -6,8 +6,6 @@ interface ButtonProps {
   variant?: "primary" | "secondary";
 }
 
-// TODO: change 20px to its own size
-
 export default function Button({
   label,
   onClick,
@@ -15,7 +13,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`w-full py-[20px] rounded-xs text-white text-button ${variant}`}
+      className={`w-full py-button rounded-xs text-white text-button ${variant}`}
       onClick={onClick}
     >
       {label}
