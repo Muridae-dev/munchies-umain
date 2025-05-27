@@ -24,27 +24,27 @@ export default function About() {
         <span className="underline">Colors</span>
         <div>
           White
-          <div className="w-20 aspect-square bg-white"></div>
+          <div className="size-20 bg-white"></div>
         </div>
 
         <div>
           Stroke
-          <div className="w-20 aspect-square bg-stroke"></div>
+          <div className="size-20 aspect-square bg-stroke"></div>
         </div>
 
         <div>
           Off-white
-          <div className="w-20 aspect-square bg-off-white"></div>
+          <div className="size-20 aspect-square bg-off-white"></div>
         </div>
 
         <div>
           Black
-          <div className="w-20 aspect-square bg-black"></div>
+          <div className="size-20 aspect-square bg-black"></div>
         </div>
 
         <div>
           Green
-          <div className="w-20 aspect-square bg-green"></div>
+          <div className="size-20 aspect-square bg-green"></div>
         </div>
       </div>
 

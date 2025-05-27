@@ -11,4 +11,5 @@
 @theme inline {
   --spacing-button: 20px;
   --radius-button: 8px;
+  --text-button: 1rem;
 }
