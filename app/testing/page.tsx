@@ -1,6 +1,8 @@
 "use client";
 
 import Button from "../components/Button";
+import Logo from "../components/Logo";
+import LogoComp from "../components/Logo";
 
 const buttonPress = () => {
   alert("pressed");
@@ -48,13 +50,16 @@ export default function About() {
 
       <div className="flex align-center flex-col gap-5">
         <span className="underline">Components</span>
-
         <Button label="Button Primary" onClick={buttonPress} />
         <Button
           label="Button Secondary"
           onClick={buttonPress}
           variant="secondary"
         />
+        Logo dark
+        <Logo />
+        Logo light
+        <Logo variant="light" />
       </div>
     </div>
   );
