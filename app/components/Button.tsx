@@ -6,6 +6,8 @@ interface ButtonProps {
   variant?: "primary" | "secondary";
 }
 
+// TODO: Extra, add hover states
+
 export default function Button({
   label,
   onClick,
