@@ -10,7 +10,7 @@ const buttonPress = () => {
 
 export default function About() {
   return (
-    <div className="flex align-center flex-col gap-10 h-auto w-screen p-5 bg-red-300">
+    <div className="flex align-center flex-col gap-10 h-auto w-screen p-5 bg-[#5993f0]">
       <div className="flex align-center flex-col gap-5">
         <span className="underline">TEXT</span>
         <span className="text-display">Text Display</span>
