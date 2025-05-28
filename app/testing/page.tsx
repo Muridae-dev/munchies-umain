@@ -1,9 +1,8 @@
-import { getRestaurantData, Restaurant } from "../api/restaurants";
+import { getRestaurantData, Restaurant } from "../lib/getRestaurants";
 import Button from "../components/Button";
 import CategoryCard from "../components/CategoryCard";
 import InfoCard from "../components/InfoCard";
 import Logo from "../components/Logo";
-import LogoComp from "../components/Logo";
 import RestaurantCard from "../components/RestaurantCard";
 
 const buttonPress = () => {

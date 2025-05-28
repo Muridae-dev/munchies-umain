@@ -1,0 +1,36 @@
+"use client";
+
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import { RestaurantTypes } from "../lib/getFilters";
+import CategoryCard from "./CategoryCard";
+
+interface RestaurantTypeListProps {
+  restaurantTypes: RestaurantTypes[];
+}
+
+export default function RestaurantTypeList({
+  restaurantTypes,
+}: RestaurantTypeListProps) {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    slides: { perView: "auto", spacing: 10 },
+    mode: "free",
+  });
+
+  return (
+    <div ref={sliderRef} className="keen-slider">
+      {restaurantTypes.map((restaurantType) => (
+        <div
+          key={restaurantType.id}
+          className="keen-slider__slide !w-[160px] flex-shrink-0"
+        >
+          <CategoryCard
+            title={restaurantType.name}
+            imageSrc={restaurantType.image_url}
+          />
+        </div>
+      ))}
+      <div className="keen-slider__slide !w-[1px] flex-shrink-0 opacity-0 pointer-events-none" />
+    </div>
+  );
+}

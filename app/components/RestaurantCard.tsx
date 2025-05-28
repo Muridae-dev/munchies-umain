@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { isRestaurantOpen } from "../api/restaurants";
+import { isRestaurantOpen } from "../lib/getRestaurants";
 import StatusBar from "./StatusBar";
 
 interface CategoryCardProps {
