@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./Button.css";
+@import "./StatusBar.css";
 
 @tailwind utilities;
 
@@ -51,7 +52,6 @@
 .text-button {
   @apply font-bold;
 }
-
 @font-face {
   font-family: "SF Pro";
   src: url("/fonts/SFPro/SF-Pro.otf");
