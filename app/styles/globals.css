@@ -67,6 +67,10 @@
   @apply rounded-sm bg-white border border-stroke;
 }
 
+.card-secondary {
+  @apply bg-off-white;
+}
+
 .flex-between {
   @apply flex justify-between;
 }

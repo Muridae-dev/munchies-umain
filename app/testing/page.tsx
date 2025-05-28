@@ -81,8 +81,9 @@ export default async function About() {
         />
       </div>
 
-      <div className="flex align-center flex-col gap-5 pl-[100px]">
+      <div className="flex align-center flex-col gap-5">
         <InfoCard title="Coffee" />
+        <InfoCard title="Open tomorrow at 12 pm" variant="secondary" />
       </div>
     </div>
   );
