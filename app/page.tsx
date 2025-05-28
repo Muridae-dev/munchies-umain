@@ -1,14 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-interface Restaurant {
-  id: string;
-  name: string;
-  rating: number;
-  filter_ids: string[];
-  image_url: string;
-  price_range_id: string;
-}
+import { getRestaurantData, Restaurant } from "./api/restaurants";
 
 export default async function Home() {
   const {
@@ -34,15 +26,4 @@ export default async function Home() {
       ))}
     </div>
   );
-}
-
-async function getRestaurantData() {
-  const res = await fetch(
-    "https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaurants"
-  );
-  const restaurants = await res.json();
-
-  return {
-    restaurants,
-  };
 }

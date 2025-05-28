@@ -1,6 +1,8 @@
 "use client";
 
+import { getRestaurantData, Restaurant } from "../api/restaurants";
 import Button from "../components/Button";
+import CategoryCard from "../components/CategoryCard";
 import Logo from "../components/Logo";
 import LogoComp from "../components/Logo";
 
@@ -8,9 +10,13 @@ const buttonPress = () => {
   alert("pressed");
 };
 
-export default function About() {
+export default async function About() {
+  const {
+    restaurants: { restaurants },
+  }: { restaurants: { restaurants: Restaurant[] } } = await getRestaurantData();
+
   return (
-    <div className="flex align-center flex-col gap-10 h-auto w-screen p-5 bg-[#5993f0]">
+    <div className="flex align-center flex-col gap-10 h-auto w-full p-5 bg-[#5993f0]">
       <div className="flex align-center flex-col gap-5">
         <span className="underline">TEXT</span>
         <span className="text-display">Text Display</span>
@@ -60,6 +66,10 @@ export default function About() {
         <Logo />
         Logo light
         <Logo variant="light" />
+      </div>
+
+      <div className="flex align-center flex-col gap-5">
+        <CategoryCard title={"Coffee"} imageSrc={restaurants[0].image_url} />
       </div>
     </div>
   );

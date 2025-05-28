@@ -6,6 +6,14 @@
   --foreground: #171717;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
 @theme inline {
   --font-sans: "SF Pro", "sans-serif";
   --color-white: #ffffff;
@@ -23,7 +31,7 @@
   --spacing-logo: 24px;
   --spacing-logo-desktop: 40px;
 
-  --radius-xs: 5px;
+  --radius-sm: 8px;
 }
 
 .text-subtitle {
@@ -36,7 +44,7 @@
 
 @font-face {
   font-family: "SF Pro";
-  src: url("/fonts/SFPro/SFProDisplay-Regular.woff2") format("woff2");
+  src: url("/fonts/SFPro/SF-Pro.ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
