@@ -56,7 +56,7 @@ export default async function About() {
 
       <div className="flex align-center flex-col gap-5">
         <span className="underline">Components</span>
-        <Button label="Button Primary" onClick={buttonPress} />
+        <Button label="Order" onClick={buttonPress} />
         <Button
           label="Button Secondary"
           onClick={buttonPress}
