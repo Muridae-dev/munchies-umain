@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import CategoryCard from "../components/CategoryCard";
 import Logo from "../components/Logo";
 import LogoComp from "../components/Logo";
+import RestaurantCard from "../components/RestaurantCard";
 
 const buttonPress = () => {
   alert("pressed");
@@ -70,6 +71,13 @@ export default async function About() {
 
       <div className="flex align-center flex-col gap-5">
         <CategoryCard title={"Coffee"} imageSrc={restaurants[0].image_url} />
+      </div>
+
+      <div className="flex align-center flex-col gap-5">
+        <RestaurantCard
+          title={restaurants[0].name}
+          imageSrc={restaurants[0].image_url}
+        />
       </div>
     </div>
   );
