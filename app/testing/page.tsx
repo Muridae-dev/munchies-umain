@@ -1,5 +1,3 @@
-"use client";
-
 import { getRestaurantData, Restaurant } from "../api/restaurants";
 import Button from "../components/Button";
 import CategoryCard from "../components/CategoryCard";
@@ -57,12 +55,12 @@ export default async function About() {
 
       <div className="flex align-center flex-col gap-5">
         <span className="underline">Components</span>
-        <Button label="Order" onClick={buttonPress} />
+        {/* <Button label="Order" onClick={buttonPress} />
         <Button
           label="Button Secondary"
           onClick={buttonPress}
           variant="secondary"
-        />
+        /> */}
         Logo dark
         <Logo />
         Logo light
@@ -77,6 +75,8 @@ export default async function About() {
         <RestaurantCard
           title={restaurants[0].name}
           imageSrc={restaurants[0].image_url}
+          id={restaurants[0].id}
+          deliveryTime={restaurants[0].delivery_time_minutes}
         />
       </div>
     </div>

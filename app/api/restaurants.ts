@@ -4,6 +4,7 @@ export interface Restaurant {
   rating: number;
   filter_ids: string[];
   image_url: string;
+  delivery_time_minutes: number;
   price_range_id: string;
 }
 
@@ -15,5 +16,21 @@ export async function getRestaurantData() {
 
   return {
     restaurants,
+  };
+}
+
+interface OpenDataProps {
+  is_open: boolean;
+  restaurant_id: string;
+}
+
+export async function isRestaurantOpen(id: string) {
+  const res = await fetch(
+    `https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/open/${id}`
+  );
+  const openData: OpenDataProps = await res.json();
+
+  return {
+    isOpen: openData.is_open,
   };
 }
