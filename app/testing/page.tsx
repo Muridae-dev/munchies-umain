@@ -1,6 +1,7 @@
 import { getRestaurantData, Restaurant } from "../api/restaurants";
 import Button from "../components/Button";
 import CategoryCard from "../components/CategoryCard";
+import InfoCard from "../components/InfoCard";
 import Logo from "../components/Logo";
 import LogoComp from "../components/Logo";
 import RestaurantCard from "../components/RestaurantCard";
@@ -78,6 +79,11 @@ export default async function About() {
           id={restaurants[0].id}
           deliveryTime={restaurants[0].delivery_time_minutes}
         />
+      </div>
+
+      <div className="flex align-center flex-col gap-5">
+        <InfoCard title="Coffee" />
+        <InfoCard title="Open tomorrow at 12 pm" variant="secondary" />
       </div>
     </div>
   );

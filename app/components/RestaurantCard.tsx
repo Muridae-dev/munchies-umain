@@ -18,12 +18,12 @@ export default async function RestaurantCard({
   const { isOpen } = await isRestaurantOpen(id);
 
   return (
-    <div className="flex flex-col-reverse justify-between w-[327px] h-[202px] card-shadow border rounded-sm bg-white border-stroke relative p-[16px] overflow-hidden">
-      <div className="flex flex-row justify-between">
+    <div className="card card-shadow flex-between flex-col-reverse w-[327px] h-[202px] relative p-[16px] overflow-hidden">
+      <div className="flex-between flex-row">
         <h2 className="text-h1">{title}</h2>
         <img src="/icons/Cta.svg" />
       </div>
-      <div className="flex justify-between">
+      <div className="flex-between">
         <div className="flex gap-[8px]">
           <StatusBar title={isOpen ? "open" : "closed"} />
           {deliveryTime && isOpen && (
