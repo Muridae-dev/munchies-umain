@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const {
     restaurants: { restaurants },
