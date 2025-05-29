@@ -1,6 +1,6 @@
 import { Restaurant } from "../lib/getRestaurants";
 
-export interface PriceRanges {
+export interface PriceRange {
   id: string;
   range: string;
 }
@@ -16,7 +16,7 @@ export const getPriceRanges = async (restaurants: Restaurant[]) => {
     ...new Set(restaurants.map((restaurant) => restaurant.price_range_id)),
   ];
 
-  const priceRanges: PriceRanges[] = await Promise.all(
+  const priceRanges: PriceRange[] = await Promise.all(
     uniqueIds.map(async (id) => {
       const res = await fetch(
         `https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/price-range/${id}`

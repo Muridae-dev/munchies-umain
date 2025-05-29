@@ -1,9 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { Restaurant } from "../lib/getRestaurants";
 import { useRestaurantStore } from "../stores/restaurantStore";
-import { PriceRanges, RestaurantTypes } from "../lib/getFilters";
 import FilterGroup from "./FilterGroup";
 import {
   deliveryTimes,
@@ -11,37 +8,17 @@ import {
   toggleFilters,
 } from "../utils/filtering";
 
-interface FilterProps {
-  restaurantProp: Restaurant[];
-  priceRangeProp: PriceRanges[];
-  restaurantTypeProp: RestaurantTypes[];
-}
-
-export default function Filters({
-  restaurantProp,
-  priceRangeProp,
-  restaurantTypeProp,
-}: FilterProps) {
+export default function Filters() {
   const {
-    setRestaurants,
-    setPriceRanges,
-    setRestaurantTypes,
     setSelectedTypes,
     setSelectedDeliveryTimes,
     setSelectedPriceRanges,
-    restaurants,
     priceRanges,
     restaurantTypes,
     selectedTypes,
     selectedDeliveryTimes,
     selectedPriceRanges,
   } = useRestaurantStore();
-
-  useEffect(() => {
-    setRestaurants(restaurantProp);
-    setPriceRanges(priceRangeProp);
-    setRestaurantTypes(restaurantTypeProp);
-  }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
 
   return (
     <>
