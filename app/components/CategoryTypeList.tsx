@@ -1,15 +1,13 @@
+"use client";
+
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { RestaurantTypes } from "../lib/getFilters";
 import CategoryCard from "./CategoryCard";
+import { useRestaurantStore } from "../stores/restaurantStore";
 
-interface CategoryTypeListProps {
-  restaurantTypes: RestaurantTypes[];
-}
+export default function CategoryTypeList() {
+  const { restaurantTypes } = useRestaurantStore();
 
-export default function CategoryTypeList({
-  restaurantTypes,
-}: CategoryTypeListProps) {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: { perView: "auto", spacing: 10 },
     mode: "free",

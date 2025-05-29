@@ -24,7 +24,6 @@ export default function RestaurantsPage({
     setPriceRanges,
     setRestaurantTypes,
     restaurants,
-    priceRanges,
     restaurantTypes,
   } = useRestaurantStore();
 
@@ -43,7 +42,7 @@ export default function RestaurantsPage({
           <Filters />
         </div>
         <div className="flex-1 overflow-x-hidden">
-          <CategoryTypeList restaurantTypes={restaurantTypes} />
+          {restaurantTypes[0] && <CategoryTypeList />}
         </div>
       </div>
     </div>
