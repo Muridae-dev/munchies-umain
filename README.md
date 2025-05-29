@@ -7,6 +7,7 @@
   - Filter size is also pretty off, 239px (?)
 - Fonts from download page are huge, are there woff2 variants able to download from somewhere?
 - All InfoCard sizes are equal except for price-range, is that really necessary?
+- LineHeights are pretty strange, eg on Display it's barely covering half
 
 ## Questions to Backend
 

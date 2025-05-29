@@ -5,6 +5,8 @@ import {
 } from "./lib/getRestaurants";
 import { getPriceRanges, getRestaurantTypes } from "./lib/getFilters";
 import RestaurantsPage from "./components/RestaurantsPage";
+import OpeningAnimation from "./components/OpeningAnimation";
+import { cookies } from "next/headers";
 
 export default async function Home() {
   const {
@@ -17,11 +19,18 @@ export default async function Home() {
 
   await getOpenStatuses(restaurants);
 
+  const cookieStore = cookies();
+  const hasSeen =
+    (await cookieStore).get("hasSeenOpeningAnimation")?.value === "true";
+
   return (
-    <RestaurantsPage
-      restaurantProp={restaurants}
-      priceRangeProp={priceRanges}
-      restaurantTypeProp={filters}
-    />
+    <>
+      {!hasSeen && <OpeningAnimation />}
+      <RestaurantsPage
+        restaurantProp={restaurants}
+        priceRangeProp={priceRanges}
+        restaurantTypeProp={filters}
+      />
+    </>
   );
 }
