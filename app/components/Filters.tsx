@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { Restaurant } from "../lib/getRestaurants";
 import { useRestaurantStore } from "../stores/restaurantStore";
-import InfoCard from "./InfoCard";
 import { PriceRanges, RestaurantTypes } from "../lib/getFilters";
 import FilterGroup from "./FilterGroup";
 import {

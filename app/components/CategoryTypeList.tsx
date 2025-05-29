@@ -5,13 +5,13 @@ import { useKeenSlider } from "keen-slider/react";
 import { RestaurantTypes } from "../lib/getFilters";
 import CategoryCard from "./CategoryCard";
 
-interface RestaurantTypeListProps {
+interface CategoryTypeListProps {
   restaurantTypes: RestaurantTypes[];
 }
 
-export default function RestaurantTypeList({
+export default function CategoryTypeList({
   restaurantTypes,
-}: RestaurantTypeListProps) {
+}: CategoryTypeListProps) {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: { perView: "auto", spacing: 10 },
     mode: "free",

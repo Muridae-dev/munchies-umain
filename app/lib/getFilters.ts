@@ -12,7 +12,9 @@ export interface RestaurantTypes {
 }
 
 export const getPriceRanges = async (restaurants: Restaurant[]) => {
-  const uniqueIds = [...new Set(restaurants.map((r) => r.price_range_id))];
+  const uniqueIds = [
+    ...new Set(restaurants.map((restaurant) => restaurant.price_range_id)),
+  ];
 
   const priceRanges: PriceRanges[] = await Promise.all(
     uniqueIds.map(async (id) => {

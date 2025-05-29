@@ -4,7 +4,7 @@ import { getRestaurantData, Restaurant } from "./lib/getRestaurants";
 import { getPriceRanges, getRestaurantTypes } from "./lib/getFilters";
 import Filters from "./components/Filters";
 import Logo from "./components/Logo";
-import RestaurantTypeList from "./components/RestaurantTypeList";
+import CategoryTypeList from "./components/CategoryTypeList";
 
 export default async function Home() {
   const {
@@ -28,7 +28,7 @@ export default async function Home() {
           />
         </div>
         <div className="flex-1 overflow-x-hidden">
-          <RestaurantTypeList restaurantTypes={filters} />
+          <CategoryTypeList restaurantTypes={filters} />
         </div>
       </div>
       {/* {restaurants.map((restaurant) => (

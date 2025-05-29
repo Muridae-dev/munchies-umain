@@ -23,7 +23,9 @@ export default function FilterGroup<T>({
 }: FilterGroupProps<T>) {
   return (
     <div role="group" aria-label={`Filters for ${title}`}>
-      <h3 className="text-subtitle opacity-[40%] pb-[16px]">{title}</h3>
+      <h3 className="text-subtitle opacity-[40%] pb-[10px] md:pb-[16px]">
+        {title}
+      </h3>
       <div className={`flex flex-${layout} flex-wrap gap-[10px]`}>
         {items.map((item) => {
           const selected = isSelected(item);
