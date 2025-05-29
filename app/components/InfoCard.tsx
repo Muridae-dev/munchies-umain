@@ -17,11 +17,11 @@ export default function InfoCard({
 
   return (
     <Component
-      className={`${variant === "secondary" ? "card-secondary" : ""} ${
-        small ? "px-[8px]" : "px-[12px]"
-      } ${
+      className={`${
+        variant === "secondary" ? "card-secondary" : "card-hover"
+      } ${small ? "px-[8px]" : "px-[12px]"} ${
         isSelected ? "!invert" : ""
-      } card card-hover card-shadow w-fit text-body py-[8px] flex items-center`}
+      } card card-shadow w-fit text-body py-[8px] flex items-center`}
       onClick={onClick ?? undefined}
       aria-pressed={isSelected}
     >

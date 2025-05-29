@@ -1,6 +1,7 @@
 import Image from "next/image";
 import StatusBar from "./StatusBar";
 import Link from "next/link";
+import InfoCard from "./InfoCard";
 
 interface CategoryCardProps {
   title: string;
@@ -19,15 +20,20 @@ export default function RestaurantCard({
     <Link
       href={""}
       role="listitem"
-      className="card card-hover card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+      className="card card-hover card-shadow relative flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
       aria-label={`View details for ${title}`}
     >
-      <div className="flex-between flex-row">
+      <div className="flex-between flex-row gap-[16px]">
         <h2 className="text-h1">{title}</h2>
-        <img src="/icons/Cta.svg" alt="CTA logo" aria-hidden="true" />
+        <img
+          className="size-[32px]"
+          src="/icons/Cta.svg"
+          alt="CTA logo"
+          aria-hidden="true"
+        />
       </div>
       <div className="flex-between">
-        <div className="flex gap-[8px]">
+        <div className="flex gap-[8px] z-3">
           <StatusBar title={isOpen ? "open" : "closed"} />
           {deliveryTime && isOpen && (
             <StatusBar title={`${deliveryTime} min`} />
@@ -43,6 +49,14 @@ export default function RestaurantCard({
           />
         </figure>
       </div>
+      {!isOpen && (
+        <div
+          aria-hidden="true"
+          className="absolute top-0 left-0 h-full w-full z-1 bg-white-op flex justify-center items-center"
+        >
+          <InfoCard title="Opens tomorrow at 12 pm" variant="secondary" />
+        </div>
+      )}
     </Link>
   );
 }

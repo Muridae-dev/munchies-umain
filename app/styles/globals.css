@@ -24,6 +24,7 @@
   --color-off-white: #fafafa;
   --color-black: #000000;
   --color-green: #00703a;
+  --color-white-op: rgba(255, 255, 255, 0.7);
 
   --text-display: 2.5rem;
   --text-h1: 1.5rem;
@@ -91,7 +92,7 @@
 }
 
 .card {
-  @apply rounded-sm bg-white border border-stroke;
+  @apply rounded-sm bg-white border-[0.6px] border-stroke;
 }
 
 .card-hover {
