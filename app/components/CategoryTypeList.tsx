@@ -2,25 +2,24 @@
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { RestaurantTypes } from "../lib/getFilters";
 import CategoryCard from "./CategoryCard";
+import { useRestaurantStore } from "../stores/restaurantStore";
 
-interface CategoryTypeListProps {
-  restaurantTypes: RestaurantTypes[];
-}
+export default function CategoryTypeList() {
+  const { restaurantTypes } = useRestaurantStore();
 
-export default function CategoryTypeList({
-  restaurantTypes,
-}: CategoryTypeListProps) {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef] = useKeenSlider<HTMLElement>({
     slides: { perView: "auto", spacing: 10 },
     mode: "free",
   });
 
   return (
-    <div ref={sliderRef} className="keen-slider">
+    <ul
+      ref={sliderRef}
+      className="keen-slider shrink-0 !sticky top-[0px] z-1 bg-off-white pb-[24px]"
+    >
       {restaurantTypes.map((restaurantType) => (
-        <div
+        <li
           key={restaurantType.id}
           className="keen-slider__slide !w-[160px] flex-shrink-0"
         >
@@ -28,9 +27,9 @@ export default function CategoryTypeList({
             title={restaurantType.name}
             imageSrc={restaurantType.image_url}
           />
-        </div>
+        </li>
       ))}
       <div className="keen-slider__slide !w-[1px] flex-shrink-0 opacity-0 pointer-events-none" />
-    </div>
+    </ul>
   );
 }

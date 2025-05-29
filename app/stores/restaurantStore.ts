@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import { Restaurant } from "../lib/getRestaurants";
-import { PriceRanges, RestaurantTypes } from "../lib/getFilters";
+import { PriceRange, RestaurantTypes } from "../lib/getFilters";
 import { DeliveryTime } from "../utils/filtering";
 
 interface RestaurantState {
   restaurants: Restaurant[];
   setRestaurants: (restaurants: Restaurant[]) => void;
 
-  priceRanges: PriceRanges[];
-  setPriceRanges: (priceRanges: PriceRanges[]) => void;
+  priceRanges: PriceRange[];
+  setPriceRanges: (priceRanges: PriceRange[]) => void;
 
   restaurantTypes: RestaurantTypes[];
   setRestaurantTypes: (restaurantTypes: RestaurantTypes[]) => void;

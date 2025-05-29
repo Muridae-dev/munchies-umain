@@ -1,27 +1,30 @@
 import Image from "next/image";
-import { isRestaurantOpen } from "../lib/getRestaurants";
 import StatusBar from "./StatusBar";
+import Link from "next/link";
 
 interface CategoryCardProps {
   title: string;
   imageSrc: string;
-  id: string;
+  isOpen: boolean;
   deliveryTime?: number;
 }
 
-export default async function RestaurantCard({
+export default function RestaurantCard({
   title,
   imageSrc,
-  id,
+  isOpen,
   deliveryTime,
 }: CategoryCardProps) {
-  const { isOpen } = await isRestaurantOpen(id);
-
   return (
-    <div className="card card-shadow flex-between flex-col-reverse w-[327px] h-[202px] relative p-[16px] overflow-hidden">
+    <Link
+      href={""}
+      role="listitem"
+      className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+      aria-label={`View details for ${title}`}
+    >
       <div className="flex-between flex-row">
         <h2 className="text-h1">{title}</h2>
-        <img src="/icons/Cta.svg" />
+        <img src="/icons/Cta.svg" alt="CTA logo" aria-hidden="true" />
       </div>
       <div className="flex-between">
         <div className="flex gap-[8px]">
@@ -40,6 +43,6 @@ export default async function RestaurantCard({
           />
         </figure>
       </div>
-    </div>
+    </Link>
   );
 }
