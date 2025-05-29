@@ -23,6 +23,7 @@ export default function InfoCard({
         isSelected ? "!invert" : "hover:invert-[2%]"
       } transition-[filter] duration-300  card card-shadow w-fit text-body py-[8px] flex items-center`}
       onClick={onClick ?? undefined}
+      aria-pressed={isSelected}
     >
       {title}
     </Component>
