@@ -1,22 +1,19 @@
 import Image from "next/image";
-import { isRestaurantOpen } from "../lib/getRestaurants";
 import StatusBar from "./StatusBar";
 
 interface CategoryCardProps {
   title: string;
   imageSrc: string;
-  id: string;
+  isOpen: boolean;
   deliveryTime?: number;
 }
 
 export default function RestaurantCard({
   title,
   imageSrc,
-  id,
+  isOpen,
   deliveryTime,
 }: CategoryCardProps) {
-  const { isOpen } = isRestaurantOpen(id);
-
   return (
     <div className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden">
       <div className="flex-between flex-row">

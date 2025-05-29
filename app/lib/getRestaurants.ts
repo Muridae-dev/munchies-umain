@@ -6,6 +6,7 @@ export interface Restaurant {
   image_url: string;
   delivery_time_minutes: number;
   price_range_id: string;
+  is_open: boolean;
 }
 
 export async function getRestaurantData() {
@@ -22,6 +23,15 @@ export async function getRestaurantData() {
 interface OpenDataProps {
   is_open: boolean;
   restaurant_id: string;
+}
+
+export async function getOpenStatuses(restaurants: Restaurant[]) {
+  await Promise.all(
+    restaurants.map(async (restaurant) => {
+      const { isOpen } = await isRestaurantOpen(restaurant.id);
+      restaurant.is_open = isOpen;
+    })
+  );
 }
 
 export async function isRestaurantOpen(id: string) {

@@ -1,4 +1,8 @@
-import { getRestaurantData, Restaurant } from "./lib/getRestaurants";
+import {
+  getOpenStatuses,
+  getRestaurantData,
+  Restaurant,
+} from "./lib/getRestaurants";
 import { getPriceRanges, getRestaurantTypes } from "./lib/getFilters";
 import RestaurantsPage from "./components/RestaurantsPage";
 
@@ -10,6 +14,8 @@ export default async function Home() {
   const priceRanges = await getPriceRanges(restaurants);
 
   const { filters } = await getRestaurantTypes();
+
+  await getOpenStatuses(restaurants);
 
   return (
     <RestaurantsPage

@@ -15,7 +15,7 @@ export default function RestaurantList() {
             key={restaurant.id}
             title={restaurant.name}
             imageSrc={restaurant.image_url}
-            id={restaurant.id}
+            isOpen={restaurant.is_open}
           />
         ))}
       </ul>
