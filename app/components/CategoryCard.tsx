@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryCardProps {
   title: string;
@@ -7,7 +8,10 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ title, imageSrc }: CategoryCardProps) {
   return (
-    <div className="w-[160px] h-[80px] card-shadow rounded-sm bg-white flex border border-stroke relative py-[16px] px-[12px]">
+    <Link
+      href={""}
+      className="w-[160px] h-[80px] card-shadow rounded-sm bg-white flex border border-stroke relative py-[16px] px-[12px]"
+    >
       <span>{title}</span>
       <figure className="size-[80px] absolute top-[50%] right-[-10px] translate-y-[-50%]">
         <Image
@@ -18,6 +22,6 @@ export default function CategoryCard({ title, imageSrc }: CategoryCardProps) {
           sizes="80px"
         />
       </figure>
-    </div>
+    </Link>
   );
 }

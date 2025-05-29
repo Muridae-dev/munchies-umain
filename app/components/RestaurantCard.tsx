@@ -1,5 +1,6 @@
 import Image from "next/image";
 import StatusBar from "./StatusBar";
+import Link from "next/link";
 
 interface CategoryCardProps {
   title: string;
@@ -15,7 +16,10 @@ export default function RestaurantCard({
   deliveryTime,
 }: CategoryCardProps) {
   return (
-    <div className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden">
+    <Link
+      href={""}
+      className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+    >
       <div className="flex-between flex-row">
         <h2 className="text-h1">{title}</h2>
         <img src="/icons/Cta.svg" />
@@ -37,6 +41,6 @@ export default function RestaurantCard({
           />
         </figure>
       </div>
-    </div>
+    </Link>
   );
 }
