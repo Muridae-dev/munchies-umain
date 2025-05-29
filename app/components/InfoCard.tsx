@@ -1,19 +1,31 @@
 interface InfoCardProps {
   title: string;
   variant?: "primary" | "secondary";
+  small?: boolean;
+  onClick?: () => void;
+  isSelected?: boolean;
 }
 
 export default function InfoCard({
   title,
   variant = "primary",
+  small,
+  onClick,
+  isSelected,
 }: InfoCardProps) {
+  const Component = onClick ? "button" : "div";
+
   return (
-    <div
-      className={`${
-        variant === "secondary" ? "card-secondary" : ""
-      } card card-shadow w-fit px-[12px] text-body py-[8px] flex items-center`}
+    <Component
+      className={`${variant === "secondary" ? "card-secondary" : ""} ${
+        small ? "px-[8px]" : "px-[12px]"
+      } ${
+        isSelected ? "!invert" : "hover:invert-[2%]"
+      } transition-[filter] duration-300  card card-shadow w-fit text-body py-[8px] flex items-center`}
+      onClick={onClick ?? undefined}
+      aria-pressed={isSelected}
     >
       {title}
-    </div>
+    </Component>
   );
 }
