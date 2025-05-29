@@ -5,6 +5,12 @@ import { Restaurant } from "../lib/getRestaurants";
 import { useRestaurantStore } from "../stores/restaurantStore";
 import InfoCard from "./InfoCard";
 import { PriceRanges, RestaurantTypes } from "../lib/getFilters";
+import FilterGroup from "./FilterGroup";
+import {
+  deliveryTimes,
+  toggleDeliveryTime,
+  toggleFilters,
+} from "../utils/filtering";
 
 interface FilterProps {
   restaurantProp: Restaurant[];
@@ -21,34 +27,27 @@ export default function Filters({
     setRestaurants,
     setPriceRanges,
     setRestaurantTypes,
+    setSelectedTypes,
+    setSelectedDeliveryTimes,
+    setSelectedPriceRanges,
     restaurants,
     priceRanges,
     restaurantTypes,
+    selectedTypes,
+    selectedDeliveryTimes,
+    selectedPriceRanges,
   } = useRestaurantStore();
-
-  const deliveryTimes = [
-    {
-      min: 0,
-      max: 10,
-    },
-    {
-      min: 10,
-      max: 30,
-    },
-    {
-      min: 30,
-      max: 60,
-    },
-    {
-      min: 60,
-    },
-  ];
 
   useEffect(() => {
     setRestaurants(restaurantProp);
     setPriceRanges(priceRangeProp);
     setRestaurantTypes(restaurantTypeProp);
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
+
+  useEffect(() => {
+    console.log(selectedTypes);
+    console.log(selectedDeliveryTimes);
+  }, [selectedTypes, selectedDeliveryTimes]);
 
   return (
     <>
@@ -74,49 +73,44 @@ export default function Filters({
       {/* DESKTOP */}
       <div className="hidden md:flex flex-col gap-[32px] card p-[24px] w-[239px]">
         <h2 className="text-h1">Filter</h2>
-        <div>
-          <span className="text-subtitle opacity-[40%]">Food Category</span>
-          <div className="flex flex-col gap-[10px]">
-            {restaurantTypes.map((restaurantType) => {
-              return (
-                <InfoCard key={restaurantType.id} title={restaurantType.name} />
-              );
-            })}
-          </div>
-        </div>
+        <FilterGroup
+          title="Food Category"
+          items={restaurantTypes}
+          getKey={(r) => r.id}
+          getLabel={(r) => r.name}
+          isSelected={(r) => selectedTypes.includes(r.id)}
+          onToggle={(r) => toggleFilters(r.id, selectedTypes, setSelectedTypes)}
+          layout="col"
+        />
 
-        <div>
-          <span className="text-subtitle opacity-[40%]">Delivery Time</span>
-          <div className="flex flex-row flex-wrap gap-[10px]">
-            {deliveryTimes.map((deliveryTime) => {
-              return (
-                <InfoCard
-                  key={deliveryTime.min}
-                  title={
-                    deliveryTime.max
-                      ? `${deliveryTime.min}-${deliveryTime.max} min`
-                      : `${deliveryTime.min} min+`
-                  }
-                />
-              );
-            })}
-          </div>
-        </div>
+        <FilterGroup
+          title="Delivery Time"
+          layout="row"
+          items={deliveryTimes}
+          getKey={(d) => `${d.min}-${d.max ?? "plus"}`}
+          getLabel={(d) => (d.max ? `${d.min}-${d.max} min` : `${d.min}+ min`)}
+          isSelected={(d) => selectedDeliveryTimes?.includes(d)}
+          onToggle={(d) =>
+            toggleDeliveryTime(
+              d,
+              selectedDeliveryTimes,
+              setSelectedDeliveryTimes
+            )
+          }
+        />
 
-        <div>
-          <span className="text-subtitle opacity-[40%]">Price Range</span>
-          <div className="flex flex-row flex-wrap gap-[10px]">
-            {priceRanges.map((priceRange) => {
-              return (
-                <InfoCard
-                  key={priceRange.id}
-                  title={priceRange.range}
-                  small={true}
-                />
-              );
-            })}
-          </div>
-        </div>
+        <FilterGroup
+          title="Price Range"
+          layout="row"
+          small
+          items={priceRanges}
+          getKey={(p) => p.id}
+          getLabel={(p) => p.range}
+          isSelected={(p) => selectedPriceRanges.includes(p.id)}
+          onToggle={(p) =>
+            toggleFilters(p.id, selectedPriceRanges, setSelectedPriceRanges)
+          }
+        />
       </div>
     </>
   );
