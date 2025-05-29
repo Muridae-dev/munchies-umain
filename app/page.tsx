@@ -15,8 +15,6 @@ export default async function Home() {
 
   const { filters } = await getRestaurantTypes();
 
-  console.log("filters::", filters);
-
   await getOpenStatuses(restaurants);
 
   return (
