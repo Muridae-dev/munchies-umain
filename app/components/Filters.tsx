@@ -51,12 +51,20 @@ export default function Filters({
           title="Delivery Time"
           layout="row"
           items={deliveryTimes}
-          getKey={(d) => `${d.min}-${d.max ?? "plus"}`}
-          getLabel={(d) => (d.max ? `${d.min}-${d.max} min` : `${d.min}+ min`)}
-          isSelected={(d) => selectedDeliveryTimes?.includes(d)}
-          onToggle={(d) =>
+          getKey={(deliveryTime) =>
+            `${deliveryTime.min}-${deliveryTime.max ?? "plus"}`
+          }
+          getLabel={(deliveryTime) =>
+            deliveryTime.max
+              ? `${deliveryTime.min}-${deliveryTime.max} min`
+              : `${deliveryTime.min}+ min`
+          }
+          isSelected={(deliveryTime) =>
+            selectedDeliveryTimes?.includes(deliveryTime)
+          }
+          onToggle={(deliveryTime) =>
             toggleDeliveryTime(
-              d,
+              deliveryTime,
               selectedDeliveryTimes,
               setSelectedDeliveryTimes
             )
@@ -70,10 +78,14 @@ export default function Filters({
         <FilterGroup
           title="Food Category"
           items={restaurantTypes}
-          getKey={(r) => r.id}
-          getLabel={(r) => r.name}
-          isSelected={(r) => selectedTypes.includes(r.id)}
-          onToggle={(r) => toggleFilters(r.id, selectedTypes, setSelectedTypes)}
+          getKey={(restaurantType) => restaurantType.id}
+          getLabel={(restaurantType) => restaurantType.name}
+          isSelected={(restaurantType) =>
+            selectedTypes.includes(restaurantType.id)
+          }
+          onToggle={(restaurantType) =>
+            toggleFilters(restaurantType.id, selectedTypes, setSelectedTypes)
+          }
           layout="col"
         />
 
@@ -81,12 +93,20 @@ export default function Filters({
           title="Delivery Time"
           layout="row"
           items={deliveryTimes}
-          getKey={(d) => `${d.min}-${d.max ?? "plus"}`}
-          getLabel={(d) => (d.max ? `${d.min}-${d.max} min` : `${d.min}+ min`)}
-          isSelected={(d) => selectedDeliveryTimes?.includes(d)}
-          onToggle={(d) =>
+          getKey={(deliveryTime) =>
+            `${deliveryTime.min}-${deliveryTime.max ?? "plus"}`
+          }
+          getLabel={(deliveryTime) =>
+            deliveryTime.max
+              ? `${deliveryTime.min}-${deliveryTime.max} min`
+              : `${deliveryTime.min}+ min`
+          }
+          isSelected={(deliveryTime) =>
+            selectedDeliveryTimes?.includes(deliveryTime)
+          }
+          onToggle={(deliveryTime) =>
             toggleDeliveryTime(
-              d,
+              deliveryTime,
               selectedDeliveryTimes,
               setSelectedDeliveryTimes
             )
@@ -98,11 +118,17 @@ export default function Filters({
           layout="row"
           small
           items={priceRanges}
-          getKey={(p) => p.id}
-          getLabel={(p) => p.range}
-          isSelected={(p) => selectedPriceRanges.includes(p.id)}
-          onToggle={(p) =>
-            toggleFilters(p.id, selectedPriceRanges, setSelectedPriceRanges)
+          getKey={(priceRange) => priceRange.id}
+          getLabel={(priceRange) => priceRange.range}
+          isSelected={(priceRange) =>
+            selectedPriceRanges.includes(priceRange.id)
+          }
+          onToggle={(priceRange) =>
+            toggleFilters(
+              priceRange.id,
+              selectedPriceRanges,
+              setSelectedPriceRanges
+            )
           }
         />
       </div>
