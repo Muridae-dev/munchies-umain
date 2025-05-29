@@ -8,6 +8,7 @@ import CategoryTypeList from "./CategoryTypeList";
 import Filters from "./Filters";
 import Logo from "./Logo";
 import RestaurantList from "./RestaurantList";
+import Link from "next/link";
 
 interface RestaurantsPageProps {
   restaurantProp: Restaurant[];
@@ -24,19 +25,24 @@ export default function RestaurantsPage({
     setRestaurants,
     setPriceRanges,
     setRestaurantTypes,
-    restaurants,
     restaurantTypes,
   } = useRestaurantStore();
 
   useEffect(() => {
-    setRestaurants(restaurantProp);
+    const sortedRestaurants = restaurantProp.sort((a, b) => {
+      return Number(b.is_open) - Number(a.is_open);
+    });
+
+    setRestaurants(sortedRestaurants);
     setPriceRanges(priceRangeProp);
     setRestaurantTypes(restaurantTypeProp);
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
 
   return (
     <div className="bg-off-white h-screen max-w-screen overflow-hidden pl-[24px] pt-[40px] lg:pl-[40px] lg:pt-[56px] flex flex-col gap-[24px] lg:gap-[48px]">
-      <Logo variant="dark" />
+      <Link href="/" className="w-fit">
+        <Logo variant="dark" />
+      </Link>
 
       <div className="flex flex-col lg:flex-row gap-[20px] w-full max-w-full overflow-auto">
         <div className="shrink-0 pr-[24px] lg:pr-[0px] lg:max-h lg:pb-[24px]">
