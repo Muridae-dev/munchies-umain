@@ -77,7 +77,7 @@ export default function Content({
         <RestaurantCard
           title={restaurants[0].name}
           imageSrc={restaurants[0].image_url}
-          id={restaurants[0].id}
+          isOpen={true}
           deliveryTime={restaurants[0].delivery_time_minutes}
         />
       </div>

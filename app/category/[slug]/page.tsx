@@ -7,9 +7,7 @@ import { getPriceRanges, getRestaurantTypes } from "../../lib/getFilters";
 import RestaurantsPage from "../../components/RestaurantsPage";
 import { notFound } from "next/navigation";
 
-interface CategoryPageProps {
-  params: { slug: string };
-}
+type Params = { slug: string };
 
 export async function generateStaticParams() {
   const { filters } = await getRestaurantTypes();
@@ -19,8 +17,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = params;
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
 
   const {
     restaurants: { restaurants },
