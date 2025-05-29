@@ -3,13 +3,15 @@ interface InfoCardProps {
   variant?: "primary" | "secondary";
   small?: boolean;
   onClick?: () => void;
+  isSelected?: boolean;
 }
 
 export default function InfoCard({
   title,
   variant = "primary",
-  small = false,
+  small,
   onClick,
+  isSelected,
 }: InfoCardProps) {
   const Component = onClick ? "button" : "div";
 
@@ -17,7 +19,9 @@ export default function InfoCard({
     <Component
       className={`${variant === "secondary" ? "card-secondary" : ""} ${
         small ? "px-[8px]" : "px-[12px]"
-      } card card-shadow w-fit text-body py-[8px] flex items-center`}
+      } ${
+        isSelected ? "!invert" : "hover:invert-[2%]"
+      } transition-[filter] duration-300  card card-shadow w-fit text-body py-[8px] flex items-center`}
       onClick={onClick ?? undefined}
     >
       {title}

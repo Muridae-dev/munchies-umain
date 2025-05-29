@@ -35,7 +35,7 @@ export default function FilterGroup<T>({
               key={getKey(item)}
               title={getLabel(item)}
               onClick={() => onToggle(item)}
-              aria-pressed={selected}
+              isSelected={selected}
               small={small}
             />
           );
