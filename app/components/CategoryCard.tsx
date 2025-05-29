@@ -10,6 +10,7 @@ export default function CategoryCard({ title, imageSrc }: CategoryCardProps) {
   return (
     <Link
       href={""}
+      aria-label={`View only ${title} restaurants`}
       className="w-[160px] h-[80px] card-shadow rounded-sm bg-white flex border border-stroke relative py-[16px] px-[12px]"
     >
       <span>{title}</span>

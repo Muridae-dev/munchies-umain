@@ -18,11 +18,13 @@ export default function RestaurantCard({
   return (
     <Link
       href={""}
+      role="listitem"
       className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+      aria-label={`View details for ${title}`}
     >
       <div className="flex-between flex-row">
         <h2 className="text-h1">{title}</h2>
-        <img src="/icons/Cta.svg" />
+        <img src="/icons/Cta.svg" alt="CTA logo" aria-hidden="true" />
       </div>
       <div className="flex-between">
         <div className="flex gap-[8px]">
