@@ -44,30 +44,25 @@ export default function Filters({
     setRestaurantTypes(restaurantTypeProp);
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
 
-  useEffect(() => {
-    console.log(selectedTypes);
-    console.log(selectedDeliveryTimes);
-  }, [selectedTypes, selectedDeliveryTimes]);
-
   return (
     <>
       {/* MOBILE */}
-      <div className="flex flex-col gap-[10px] px-[24px] md:hidden">
-        <span className="text-subtitle opacity-[40%]">Delivery Time</span>
-        <div className="flex gap-[10px]">
-          {deliveryTimes.map((deliveryTime) => {
-            return (
-              <InfoCard
-                key={deliveryTime.min}
-                title={
-                  deliveryTime.max
-                    ? `${deliveryTime.min}-${deliveryTime.max} min`
-                    : `${deliveryTime.min} min+`
-                }
-              />
-            );
-          })}
-        </div>
+      <div className="flex flex-col gap-[10px] md:hidden w-full">
+        <FilterGroup
+          title="Delivery Time"
+          layout="row"
+          items={deliveryTimes}
+          getKey={(d) => `${d.min}-${d.max ?? "plus"}`}
+          getLabel={(d) => (d.max ? `${d.min}-${d.max} min` : `${d.min}+ min`)}
+          isSelected={(d) => selectedDeliveryTimes?.includes(d)}
+          onToggle={(d) =>
+            toggleDeliveryTime(
+              d,
+              selectedDeliveryTimes,
+              setSelectedDeliveryTimes
+            )
+          }
+        />
       </div>
 
       {/* DESKTOP */}

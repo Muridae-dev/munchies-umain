@@ -16,11 +16,11 @@ export default async function Home() {
   const { filters } = await getRestaurantTypes();
 
   return (
-    <div className="bg-off-white min-h-screen max-w-screen pl-[40px] pt-[56px] flex flex-col gap-[48px]">
+    <div className="bg-off-white min-h-screen max-w-screen pl-[24px] md:pl-[40px] pt-[56px] flex flex-col gap-[48px]">
       <Logo variant="dark" />
 
-      <div className="flex gap-[20px] w-full max-w-full">
-        <div className="w-[239px] shrink-0">
+      <div className="flex flex-col md:flex-row gap-[20px] w-full max-w-full">
+        <div className="shrink-0 pr-[24px] md:pr-[0px]">
           <Filters
             restaurantProp={restaurants}
             priceRangeProp={priceRanges}
