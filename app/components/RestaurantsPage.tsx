@@ -35,14 +35,14 @@ export default function RestaurantsPage({
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
 
   return (
-    <div className="bg-off-white min-h-screen max-w-screen pl-[24px] pt-[40px] lg:pl-[40px] lg:pt-[56px] flex flex-col gap-[24px] lg:gap-[48px]">
+    <div className="bg-off-white h-screen max-w-screen overflow-hidden pl-[24px] pt-[40px] lg:pl-[40px] lg:pt-[56px] flex flex-col gap-[24px] lg:gap-[48px]">
       <Logo variant="dark" />
 
-      <div className="flex flex-col lg:flex-row gap-[20px] w-full max-w-full">
-        <div className="shrink-0 pr-[24px] lg:pr-[0px]">
+      <div className="flex flex-col lg:flex-row gap-[20px] w-full max-w-full overflow-auto">
+        <div className="shrink-0 pr-[24px] lg:pr-[0px] lg:max-h lg:pb-[24px]">
           <Filters />
         </div>
-        <div className="flex flex-col flex-1 overflow-x-hidden gap-[24px]">
+        <div className="flex flex-col flex-1 overflow-x-hidden">
           {restaurantTypes[0] && <CategoryTypeList />}
           <RestaurantList />
         </div>

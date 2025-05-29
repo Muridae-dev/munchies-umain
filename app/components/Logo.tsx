@@ -7,7 +7,7 @@ interface LogoProps {
 export default function Logo({ variant = "dark" }: LogoProps) {
   return (
     <figure
-      className={`h-logo md:h-logo-desktop ${
+      className={`h-logo md:h-logo-desktop shrink-0 ${
         variant === "dark" ? "invert" : ""
       }`}
     >
