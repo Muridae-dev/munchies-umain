@@ -73,7 +73,7 @@ export default function Content({
         <CategoryCard title={"Coffee"} imageSrc={restaurants[0].image_url} />
       </div>
 
-      <div className="flex align-center flex-col gap-5">
+      <div className="flex align-center flex-col gap-5 w-[400px]">
         <RestaurantCard
           title={restaurants[0].name}
           imageSrc={restaurants[0].image_url}

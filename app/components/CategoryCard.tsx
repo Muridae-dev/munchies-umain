@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { slugify } from "../utils/regex";
 
 interface CategoryCardProps {
   title: string;
@@ -9,7 +10,7 @@ interface CategoryCardProps {
 export default function CategoryCard({ title, imageSrc }: CategoryCardProps) {
   return (
     <Link
-      href={`/category/${title.toLowerCase()}`}
+      href={`/category/${slugify(title)}`}
       aria-label={`View only ${title} restaurants`}
       className="w-[160px] h-[80px] card card-hover card-shadow flex  relative py-[16px] px-[12px]"
     >

@@ -1,3 +1,15 @@
+## Welcome!
+
+Quick walkthrough of what the project contains as of yet:
+
+- Homepage with all data
+- Slug pages based on category when pressing the Category Cards
+- a /testing page where you can find a miniature design system (I would not launch with this but I left it in if you wanna take a look)
+
+I also left some questions that popped up during my work I would've asked to designers/backend below
+
+NOTE: Since there were no specs for individual restaurant pages I left those links empty, if I would create them I'd do something similar to what I did with the Category Slugs.
+
 ## Questions to Designer
 
 - Is there meant to be shadows on the Cards? They're very minor.

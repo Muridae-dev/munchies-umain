@@ -6,6 +6,7 @@ import {
 import { getPriceRanges, getRestaurantTypes } from "../../lib/getFilters";
 import RestaurantsPage from "../../components/RestaurantsPage";
 import { notFound } from "next/navigation";
+import { slugify } from "@/app/utils/regex";
 
 type Params = { slug: string };
 
@@ -13,7 +14,7 @@ export async function generateStaticParams() {
   const { filters } = await getRestaurantTypes();
 
   return filters.map((filter) => ({
-    slug: encodeURIComponent(filter.name.toLowerCase()),
+    slug: encodeURIComponent(slugify(filter.name)),
   }));
 }
 
@@ -31,8 +32,7 @@ export default async function CategoryPage({
   const { filters } = await getRestaurantTypes();
 
   const matchingFilter = filters.find(
-    (filter) =>
-      filter.name.toLowerCase() === decodeURIComponent(slug).toLowerCase()
+    (filter) => slugify(filter.name) === decodeURIComponent(slug).toLowerCase()
   );
 
   if (!matchingFilter) {
