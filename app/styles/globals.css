@@ -94,6 +94,10 @@
   @apply rounded-sm bg-white border border-stroke;
 }
 
+.card-hover {
+  @apply hover:invert-[3%] transition-[filter] duration-300;
+}
+
 .card-secondary {
   @apply bg-off-white;
 }

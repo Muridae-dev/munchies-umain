@@ -19,7 +19,7 @@ export default function RestaurantCard({
     <Link
       href={""}
       role="listitem"
-      className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+      className="card card-hover card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
       aria-label={`View details for ${title}`}
     >
       <div className="flex-between flex-row">

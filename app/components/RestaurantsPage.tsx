@@ -24,12 +24,15 @@ export default function RestaurantsPage({
     setRestaurants,
     setPriceRanges,
     setRestaurantTypes,
-    restaurants,
     restaurantTypes,
   } = useRestaurantStore();
 
   useEffect(() => {
-    setRestaurants(restaurantProp);
+    const sortedRestaurants = restaurantProp.sort((a, b) => {
+      return Number(b.is_open) - Number(a.is_open);
+    });
+
+    setRestaurants(sortedRestaurants);
     setPriceRanges(priceRangeProp);
     setRestaurantTypes(restaurantTypeProp);
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);

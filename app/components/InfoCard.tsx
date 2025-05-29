@@ -20,8 +20,8 @@ export default function InfoCard({
       className={`${variant === "secondary" ? "card-secondary" : ""} ${
         small ? "px-[8px]" : "px-[12px]"
       } ${
-        isSelected ? "!invert" : "hover:invert-[2%]"
-      } transition-[filter] duration-300  card card-shadow w-fit text-body py-[8px] flex items-center`}
+        isSelected ? "!invert" : ""
+      } card card-hover card-shadow w-fit text-body py-[8px] flex items-center`}
       onClick={onClick ?? undefined}
       aria-pressed={isSelected}
     >
