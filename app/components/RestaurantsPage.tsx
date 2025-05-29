@@ -7,6 +7,7 @@ import { useRestaurantStore } from "../stores/restaurantStore";
 import CategoryTypeList from "./CategoryTypeList";
 import Filters from "./Filters";
 import Logo from "./Logo";
+import RestaurantList from "./RestaurantList";
 
 interface RestaurantsPageProps {
   restaurantProp: Restaurant[];
@@ -34,15 +35,16 @@ export default function RestaurantsPage({
   }, [setRestaurants, setPriceRanges, setRestaurantTypes]);
 
   return (
-    <div className="bg-off-white min-h-screen max-w-screen pl-[24px] pt-[40px] md:pl-[40px] md:pt-[56px] flex flex-col gap-[24px] md:gap-[48px]">
+    <div className="bg-off-white min-h-screen max-w-screen pl-[24px] pt-[40px] lg:pl-[40px] lg:pt-[56px] flex flex-col gap-[24px] lg:gap-[48px]">
       <Logo variant="dark" />
 
-      <div className="flex flex-col md:flex-row gap-[20px] w-full max-w-full">
-        <div className="shrink-0 pr-[24px] md:pr-[0px]">
+      <div className="flex flex-col lg:flex-row gap-[20px] w-full max-w-full">
+        <div className="shrink-0 pr-[24px] lg:pr-[0px]">
           <Filters />
         </div>
-        <div className="flex-1 overflow-x-hidden">
+        <div className="flex flex-col flex-1 overflow-x-hidden gap-[24px]">
           {restaurantTypes[0] && <CategoryTypeList />}
+          <RestaurantList />
         </div>
       </div>
     </div>

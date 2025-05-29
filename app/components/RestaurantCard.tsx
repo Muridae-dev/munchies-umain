@@ -9,16 +9,16 @@ interface CategoryCardProps {
   deliveryTime?: number;
 }
 
-export default async function RestaurantCard({
+export default function RestaurantCard({
   title,
   imageSrc,
   id,
   deliveryTime,
 }: CategoryCardProps) {
-  const { isOpen } = await isRestaurantOpen(id);
+  const { isOpen } = isRestaurantOpen(id);
 
   return (
-    <div className="card card-shadow flex-between flex-col-reverse w-[327px] h-[202px] relative p-[16px] overflow-hidden">
+    <div className="card card-shadow flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden">
       <div className="flex-between flex-row">
         <h2 className="text-h1">{title}</h2>
         <img src="/icons/Cta.svg" />
