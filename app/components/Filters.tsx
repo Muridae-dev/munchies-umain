@@ -76,7 +76,9 @@ export default function Filters() {
           getLabel={(deliveryTime) =>
             deliveryTime.max
               ? `${deliveryTime.min}-${deliveryTime.max} min`
-              : `${deliveryTime.min}+ min`
+              : deliveryTime.min >= 60
+              ? `${Math.floor(deliveryTime.min / 60)} hour+`
+              : `${deliveryTime.min} min+`
           }
           isSelected={(deliveryTime) =>
             selectedDeliveryTimes?.includes(deliveryTime)
