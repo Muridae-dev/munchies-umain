@@ -20,6 +20,10 @@ NOTE: Since there were no specs for individual restaurant pages I left those lin
 - Fonts from download page are huge, are there woff2 variants able to download from somewhere?
 - All InfoCard sizes are equal except for price-range, is that really necessary?
 - LineHeights are pretty strange, eg on Display it's barely covering half
+- There are quite a few different spacing sizes, I count 21 different "px" variants
+  - This is quite a lot to account for by using xxxs -> xxxl which accounts for 10
+  - Some spacings are only used only a few times like 32px & 48px or 88px, could these be altered to eg. 40px/32px or 80px where there are more cases?
+  - Some of these odd-ones out I've decided to hard-code, while defining sizes for the ones used more commonly
 
 ## Questions to Backend
 

@@ -16,7 +16,7 @@ export default function CategoryTypeList() {
   return (
     <ul
       ref={sliderRef}
-      className="keen-slider shrink-0 !sticky top-[0px] z-10 bg-off-white pb-[24px]"
+      className="keen-slider shrink-0 !sticky top-[0px] z-10 bg-off-white pb-xl"
     >
       {restaurantTypes.map((restaurantType) => (
         <li
