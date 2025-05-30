@@ -41,7 +41,7 @@ export default function RestaurantList() {
   return (
     <div>
       <h2 className="text-h1 pb-lg">Restaurant's</h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-xs md:gap-[17px] pr-xs md:pr-[17px] pb-xl">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-xs md:gap-md pr-xs md:pr-md pb-xl">
         {restaurantsToShow.length > 0 ? (
           restaurantsToShow.map((restaurant) => (
             <RestaurantCard

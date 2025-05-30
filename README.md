@@ -24,6 +24,7 @@ NOTE: Since there were no specs for individual restaurant pages I left those lin
   - This is quite a lot to account for by using xxxs -> xxxl which accounts for 10
   - Some spacings are only used only a few times like 32px & 48px or 88px, could these be altered to eg. 40px/32px or 80px where there are more cases?
   - Some of these odd-ones out I've decided to hard-code, while defining sizes for the ones used more commonly
+  - Two cases of 17px in design that I made 16px
 
 ## Questions to Backend
 
