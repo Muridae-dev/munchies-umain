@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: -4px 2px 10px rgba(0, 0, 0, 0.01),
+      -16px 9px 18px rgba(0, 0, 0, 0.01), -35px 20px 24px rgba(0, 0, 0, 0),
+      -63px 36px 29px rgba(0, 0, 0, 0), -98px 56px 32px rgba(0, 0, 0, 0);
+  }
+}
+
+.card {
+  @apply rounded-sm bg-white border-[0.6px] border-stroke;
+}
+
+.card-hover {
+  @apply hover:invert-[3%] transition-[filter] duration-300;
+}
+
+.card-secondary {
+  @apply bg-off-white;
+}
+
+.flex-between {
+  @apply flex justify-between;
+}

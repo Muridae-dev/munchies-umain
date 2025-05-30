@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "SF Pro", "sans-serif";
+
+  --text-display: 2.5rem;
+  --text-h1: 1.5rem;
+  --text-title: 0.875rem;
+  --text-subtitle: 0.75rem;
+  --text-body: 0.75rem;
+
+  --spacing-line-height: 0.9375rem;
+}
+
+.text-subtitle {
+  @apply uppercase;
+}
+
+.text-display,
+.text-title,
+.text-subtitle,
+.text-body {
+  @apply leading-line-height my-auto;
+}
+
+.text-h1 {
+  @apply leading-[1.2rem] my-auto;
+}
+
+.text-button {
+  @apply font-bold;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("/fonts/SFPro/SF-Pro.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("/fonts/SFPro/SF-Pro-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
