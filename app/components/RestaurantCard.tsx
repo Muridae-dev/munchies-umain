@@ -20,7 +20,7 @@ export default function RestaurantCard({
     <Link
       href={""}
       role="listitem"
-      className="card card-hover card-shadow relative flex-between flex-col-reverse aspect-[16/10] relative p-md overflow-hidden"
+      className="card card-hover card-shadow relative flex-between flex-col-reverse aspect-restaurant-card relative p-md overflow-hidden"
       aria-label={`View details for ${title}`}
     >
       <div className="flex-between flex-row gap-md">
@@ -39,7 +39,7 @@ export default function RestaurantCard({
             <StatusBar title={`${deliveryTime} min`} />
           )}
         </div>
-        <figure className="size-[140px] absolute right-[-30px] top-[-30px]">
+        <figure className="size-restaurant-card-size absolute right-restaurant-card-image-offset top-restaurant-card-image-offset">
           <Image
             src={imageSrc}
             alt={`Logo for ${title}`}

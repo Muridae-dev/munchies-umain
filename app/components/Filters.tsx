@@ -50,7 +50,7 @@ export default function Filters() {
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden lg:flex flex-col gap-xxl card p-xl w-[239px] max-h-full h-fit overflow-auto">
+      <div className="hidden lg:flex flex-col gap-xxl card p-xl w-filters-w max-h-full h-fit overflow-auto">
         <h2 className="text-h1">Filter</h2>
         <FilterGroup
           title="Food Category"

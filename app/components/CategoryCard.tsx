@@ -12,10 +12,10 @@ export default function CategoryCard({ title, imageSrc }: CategoryCardProps) {
     <Link
       href={`/category/${slugify(title)}`}
       aria-label={`View only ${title} restaurants`}
-      className="w-[160px] h-[80px] card card-hover card-shadow flex  relative py-md px-sm"
+      className="w-category-card-w h-category-card-h card card-hover card-shadow flex  relative py-md px-sm"
     >
       <span>{title}</span>
-      <figure className="size-[80px] absolute top-[50%] -right-xs translate-y-[-50%]">
+      <figure className="size-category-card-h absolute top-half -right-xs -translate-y-half">
         <Image
           src={imageSrc}
           alt={`Logo for ${title}`}

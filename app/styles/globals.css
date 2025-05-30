@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./Button.css";
-@import "./StatusBar.css";
+@import "./components.css";
 @import "./text.css";
 @import "./utils.css";
 
@@ -18,6 +18,8 @@
 
   --spacing-logo: 24px;
   --spacing-logo-desktop: 40px;
+  --spacing-page-top: 56px;
+  --spacing-half: 50%;
 
   --spacing-xxs: 8px;
   --spacing-xs: 10px;

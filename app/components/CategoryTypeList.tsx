@@ -16,12 +16,12 @@ export default function CategoryTypeList() {
   return (
     <ul
       ref={sliderRef}
-      className="keen-slider shrink-0 !sticky top-[0px] z-10 bg-off-white pb-xl"
+      className="keen-slider shrink-0 !sticky top-0 z-10 bg-off-white pb-xl"
     >
       {restaurantTypes.map((restaurantType) => (
         <li
           key={restaurantType.id}
-          className="keen-slider__slide !w-[160px] flex-shrink-0"
+          className="keen-slider__slide !w-category-card-w flex-shrink-0"
         >
           <CategoryCard
             title={restaurantType.name}
