@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-.status-bar-before {
-  @apply before:content-[''] before:size-[8px] before:inline-block before:rounded-full;
-}

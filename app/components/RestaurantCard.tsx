@@ -20,26 +20,26 @@ export default function RestaurantCard({
     <Link
       href={""}
       role="listitem"
-      className="card card-hover card-shadow relative flex-between flex-col-reverse aspect-[16/10] relative p-[16px] overflow-hidden"
+      className="card card-hover card-shadow relative flex-between flex-col-reverse aspect-restaurant-card relative p-md overflow-hidden"
       aria-label={`View details for ${title}`}
     >
-      <div className="flex-between flex-row gap-[16px]">
+      <div className="flex-between flex-row gap-md">
         <h2 className="text-h1">{title}</h2>
         <img
-          className="size-[32px]"
+          className="size-xxl"
           src="/icons/Cta.svg"
           alt="CTA logo"
           aria-hidden="true"
         />
       </div>
       <div className="flex-between">
-        <div className="flex gap-[8px] z-3">
+        <div className="flex gap-xxs z-3">
           <StatusBar title={isOpen ? "open" : "closed"} />
           {deliveryTime && isOpen && (
             <StatusBar title={`${deliveryTime} min`} />
           )}
         </div>
-        <figure className="size-[140px] absolute right-[-30px] top-[-30px]">
+        <figure className="size-restaurant-card-size absolute right-restaurant-card-image-offset top-restaurant-card-image-offset">
           <Image
             src={imageSrc}
             alt={`Logo for ${title}`}

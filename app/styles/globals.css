@@ -1,12 +1,36 @@
 @import "tailwindcss";
 @import "./Button.css";
-@import "./StatusBar.css";
-
-@tailwind utilities;
+@import "./components.css";
+@import "./text.css";
+@import "./utils.css";
 
 :root {
   --background: #fafafa;
-  --foreground: #171717;
+}
+
+@theme inline {
+  --color-white: #ffffff;
+  --color-stroke: #0000001a;
+  --color-off-white: #fafafa;
+  --color-black: #000000;
+  --color-green: #00703a;
+  --color-white-op: rgba(255, 255, 255, 0.7);
+
+  --spacing-logo: 24px;
+  --spacing-logo-desktop: 40px;
+  --spacing-page-top: 56px;
+  --spacing-half: 50%;
+
+  --spacing-xxs: 8px;
+  --spacing-xs: 10px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --spacing-xxxl: 40px;
+
+  --radius-sm: 8px;
 }
 
 *,
@@ -16,35 +40,16 @@
   margin: 0;
 }
 
-@theme inline {
-  --font-sans: "SF Pro", "sans-serif";
-  --color-white: #ffffff;
-  --color-stroke: #0000001a;
-  --color-off-white: #fafafa;
-  --color-black: #000000;
-  --color-green: #00703a;
-  --color-white-op: rgba(255, 255, 255, 0.7);
-
-  --text-display: 2.5rem;
-  --text-h1: 1.5rem;
-  --text-title: 0.875rem;
-  --text-subtitle: 0.75rem;
-  --text-body: 0.75rem;
-
-  --spacing-logo: 24px;
-  --spacing-logo-desktop: 40px;
-
-  --spacing-line-height: 0.9375rem;
-
-  --radius-sm: 8px;
+body {
+  background: var(--background);
+  color: black;
+  font-family: "SF Pro", sans-serif;
+  max-width: 1440px;
+  margin: auto;
 }
 
-@layer utilities {
-  .card-shadow {
-    box-shadow: -4px 2px 10px rgba(0, 0, 0, 0.01),
-      -16px 9px 18px rgba(0, 0, 0, 0.01), -35px 20px 24px rgba(0, 0, 0, 0),
-      -63px 36px 29px rgba(0, 0, 0, 0), -98px 56px 32px rgba(0, 0, 0, 0);
-  }
+button {
+  cursor: pointer;
 }
 
 /* width */
@@ -69,67 +74,4 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-
-.text-subtitle {
-  @apply uppercase;
-}
-
-.text-display,
-.text-title,
-.text-subtitle,
-.text-body {
-  @apply leading-line-height my-auto;
-}
-
-.text-h1 {
-  @apply leading-[1.2rem] my-auto;
-}
-
-.text-button {
-  @apply font-bold;
-}
-
-.card {
-  @apply rounded-sm bg-white border-[0.6px] border-stroke;
-}
-
-.card-hover {
-  @apply hover:invert-[3%] transition-[filter] duration-300;
-}
-
-.card-secondary {
-  @apply bg-off-white;
-}
-
-.flex-between {
-  @apply flex justify-between;
-}
-
-@font-face {
-  font-family: "SF Pro";
-  src: url("/fonts/SFPro/SF-Pro.otf");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SF Pro";
-  src: url("/fonts/SFPro/SF-Pro-Bold.otf");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "SF Pro", sans-serif;
-  max-width: 1440px;
-  margin: auto;
-}
-
-button {
-  cursor: pointer;
 }

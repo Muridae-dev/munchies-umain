@@ -11,7 +11,7 @@ export default function StatusBar({ title }: StatusBarProps) {
           : title === "closed"
           ? "status-bar-before before:bg-black"
           : ""
-      } rounded-[88px] bg-white border border-stroke py-[8px] px-[12px] text-body flex items-center gap-[2px]`}
+      } rounded-status-bar bg-white border border-stroke py-xxs px-sm text-body flex items-center gap-status-bar-gap`}
     >
       {title === "open" ? "Open" : title === "closed" ? "Closed" : title}
     </div>

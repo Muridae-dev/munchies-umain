@@ -20,10 +20,10 @@ export default function OpeningAnimation() {
     <div
       className={`${removeOpening ? "hidden" : ""} ${
         hide ? "-translate-x-full" : "translate-0"
-      } transition-transform duration-500 fixed w-screen h-dvh top-0 left-0 bg-green z-99 px-[24px] py-[40px] lg:px-[40px] lg:py-[56px] flex-col flex-between text-white`}
+      } transition-transform duration-500 fixed w-screen h-dvh top-0 left-0 bg-green z-99 px-xl py-xxxl lg:px-xxxl lg:py-page-top flex-col flex-between text-white`}
     >
       <Logo variant="light" />
-      <div className="flex flex-col gap-[16px]">
+      <div className="flex flex-col gap-md">
         <h2 className="text-display font-bold">Treat yourself.</h2>
         <span>
           Find the best restaurants in your city and get it delivered to your

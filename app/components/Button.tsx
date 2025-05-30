@@ -15,7 +15,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`w-full py-button rounded-button text-white text-button ${variant}`}
+      className={`w-full py-lg rounded-button text-white text-button ${variant}`}
       onClick={onClick}
     >
       {label}

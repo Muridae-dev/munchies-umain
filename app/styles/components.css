@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme inline {
+  --spacing-status-bar-gap: 2px;
+  --spacing-category-card-h: 80px;
+  --spacing-category-card-w: 160px;
+  --spacing-restaurant-card-size: 140px;
+  --spacing-restaurant-card-image-offset: -30px;
+  --spacing-filters-w: 239px;
+  --aspect-restaurant-card: 16/10;
+
+  --radius-status-bar: 88px;
+}
+
+.status-bar-before {
+  @apply before:content-[''] before:size-xxs before:inline-block before:rounded-full;
+}

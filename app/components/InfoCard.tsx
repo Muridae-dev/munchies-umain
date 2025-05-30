@@ -19,9 +19,9 @@ export default function InfoCard({
     <Component
       className={`${
         variant === "secondary" ? "card-secondary" : "card-hover"
-      } ${small ? "px-[8px]" : "px-[12px]"} ${
+      } ${small ? "px-xxs" : "px-sm"} ${
         isSelected ? "!invert" : ""
-      } card card-shadow w-fit text-body py-[8px] flex items-center`}
+      } card card-shadow w-fit text-body py-xxs flex items-center`}
       onClick={onClick ?? undefined}
       aria-pressed={isSelected}
     >
