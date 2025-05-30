@@ -9,6 +9,7 @@ Quick walkthrough of what the project contains as of yet:
 I also left some questions that popped up during my work I would've asked to designers/backend below
 
 NOTE: Since there were no specs for individual restaurant pages I left those links empty, if I would create them I'd do something similar to what I did with the Category Slugs.
+ALSO NOTE: I would add revalidation ticks for static pages, but I don't think it's worth to keep calling this API just for showcase.
 
 ## Questions to Designer
 
