@@ -40,19 +40,25 @@ export default function RestaurantsPage({
 
   return (
     <div className="bg-off-white h-screen max-w-screen overflow-hidden pl-xl pt-xxxl lg:pl-xxxl lg:pt-page-top flex flex-col gap-xl lg:gap-[48px]">
-      <Link href="/" className="w-fit">
-        <Logo variant="dark" />
-      </Link>
+      <header className="w-fit">
+        <Link href="/">
+          <Logo variant="dark" />
+          <h1 className="sr-only">
+            Munchies, Find the best restaurants in your city and get it
+            delivered to your place!
+          </h1>
+        </Link>
+      </header>
 
-      <div className="flex flex-col lg:flex-row gap-lg w-full max-w-full overflow-auto">
-        <div className="shrink-0 pr-xl lg:pr-0 lg:max-h lg:pb-xl">
+      <main className="flex flex-col lg:flex-row gap-lg w-full max-w-full overflow-auto">
+        <aside className="shrink-0 pr-xl lg:pr-0 lg:max-h lg:pb-xl">
           <Filters />
-        </div>
-        <div className="flex flex-col flex-1 overflow-x-hidden">
+        </aside>
+        <section className="flex flex-col flex-1 overflow-x-hidden">
           {restaurantTypes[0] && <CategoryTypeList />}
           <RestaurantList />
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
